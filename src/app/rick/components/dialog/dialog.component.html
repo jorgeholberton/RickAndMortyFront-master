@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{ data.character.name}}</h1>
+<div mat-dialog-content>
+  
+      <!-- En el dialog.component.ts  en el constructor
+constructor(@Inject(MAT_DIALOG_DATA) public data: any) {} inyecta los
+datos al componente. MAT_DIALOG_DATA ya se encuentra definido dentro 
+de angular material
+-->
+      <img [src]="data.character.image" alt="Character image">
+      <h2>Lugar: {{data.character.location.name}}</h2>
+      <h2>Género: {{data.character.gender}}</h2>
+      <h2>Origen: {{data.character.origin.name}}</h2>
+      <h2>URL: {{data.character.origin.url}}</h2>
+</div>
+

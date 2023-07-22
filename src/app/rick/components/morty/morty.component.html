@@ -1,0 +1,42 @@
+<!-- componente lista
+En la lista de caracteres en la web se observa un arreglo results 
+*ngfor es un par que permite iterar la lista con la cantida de objetos que retorna result
+en cada iteración al elemto retornado lo llamara item
+Cuando se da click se abre el open Dailog (ubicado en morty.components.ts)
+del item seleccionado.
+img matListAvatar muestar la imagen del avatar en el circulo que viene en la url.
+Al revisar img en la documentación indica que es una url string.
+-->
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      Lista Character
+    </mat-expansion-panel-header>
+
+    <mat-list>
+        <mat-list-item *ngFor="let item of characters.results" (click)="openDialog(item)">
+            <img matListAvatar [src]="item.image" alt="Character image">
+            <h3 matLine>{{ item.name }}</h3>
+            <p mat-line>
+                status: {{ item.status }} - species: {{ item.species}}
+            </p>
+        </mat-list-item>
+    </mat-list>
+</mat-expansion-panel>
+
+
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      Lista Episode
+    </mat-expansion-panel-header>
+  <mat-list>
+    <mat-list-item *ngFor="let item of characters.results">
+        <h3 matLine>{{ item.name }}</h3>
+        <p mat-line> 
+            Created: {{item.created}} - 
+            Air_Date:{{item.air_date}} - 
+            Episode: {{item.episode}}
+        </p>
+    </mat-list-item>
+</mat-list>    
+</mat-expansion-panel>

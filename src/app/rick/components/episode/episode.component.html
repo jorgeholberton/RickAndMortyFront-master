@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ data.character.episode.name}}</h1>
+<div mat-dialog-content>
+  
+      <!-- En el dialog.component.ts  en el constructor
+constructor(@Inject(MAT_DIALOG_DATA) public data: any) {} inyecta los
+datos al componente. MAT_DIALOG_DATA ya se encuentra definido dentro 
+de angular material
+-->
+      <h2>URL: {{data.character.episode.air_date}}</h2>
+      <h2>URL: {{data.character.episode.episode}}</h2>
+      
+
+</div>
